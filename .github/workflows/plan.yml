@@ -20,7 +20,7 @@ jobs:
       TZ: Africa/Douala   # heure du Cameroun (UTC+1, sans heure d'été)
       NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Établir le plan de la journée
         run: python3 cloud_plan.py
       - name: Enregistrer le plan

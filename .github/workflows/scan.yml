@@ -22,7 +22,7 @@ jobs:
       CLAUDE_ROUTINE_URL: ${{ secrets.CLAUDE_ROUTINE_URL }}
       CLAUDE_ROUTINE_TOKEN: ${{ secrets.CLAUDE_ROUTINE_TOKEN }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Scanner les matchs en direct
         run: python3 cloud_scan.py
       - name: Sauvegarder les alertes déjà traitées
