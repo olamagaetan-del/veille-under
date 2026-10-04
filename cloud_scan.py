@@ -8,6 +8,7 @@ import json, os, subprocess, sys, urllib.request
 from pathlib import Path
 
 ICI = Path(__file__).parent
+LIEN_1XBET = "https://1xbet.cm/fr/live/football"  # ouvert en touchant l'alerte
 
 
 def lancer_scan(*args) -> str:
@@ -24,7 +25,8 @@ def ntfy(message: str, priorite: str = "high"):
         print("NTFY_TOPIC absent : alerte non envoyée ->", message)
         return
     req = urllib.request.Request(f"https://ntfy.sh/{sujet}", data=message.encode("utf-8"),
-                                 headers={"Priority": priorite, "Tags": "soccer"}, method="POST")
+                                 headers={"Priority": priorite, "Tags": "soccer",
+                                          "Click": LIEN_1XBET}, method="POST")
     urllib.request.urlopen(req, timeout=15).read()
 
 

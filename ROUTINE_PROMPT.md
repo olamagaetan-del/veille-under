@@ -9,7 +9,8 @@ Traite les candidats contenus dans le bloc routine-fire-payload : c'est une list
    - Compétitions de jeunes (U17/U19/U21) et féminines → REJETER sauf profil très fermé évident.
 
 2. Pour chaque candidat SANS veto (opportunité 🟢 confirmée), envoie une notification ntfy avec curl :
-   curl -s -H "Priority: high" -H "Tags: green_circle" -d "MESSAGE" https://ntfy.sh/NTFY_CANAL
+   curl -s -H "Priority: high" -H "Tags: green_circle" -H "Click: https://1xbet.cm/fr/live/football" -d "MESSAGE" https://ntfy.sh/NTFY_CANAL
+   (l'en-tête Click ouvre la page live 1xbet quand l'utilisateur touche l'alerte)
    (remplace NTFY_CANAL par la variable d'environnement $NTFY_TOPIC)
    MESSAGE, une ligne, moins de 200 caractères :
    🟢 UNDER [ligne] — [Équipe A]-[Équipe B] [score] [minute] — [p_sans_perte en %] sans perte — cote mini [1/p_sans_perte + 0,05, 2 décimales]
